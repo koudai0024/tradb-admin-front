@@ -4,21 +4,16 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  settings: {
-    react: {
-      version: "detect",
-    },
-  },
+  settings: { react: { version: "detect" } },
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: ["./tsconfig.json"],
     ecmaFeatures: {
       jsx: true,
     },
@@ -27,10 +22,10 @@ module.exports = {
   },
   plugins: [
     "react",
-    "react-hooks",
-    "@typescript-eslint",
     "import",
     "simple-import-sort",
+    "react-hooks",
+    "@typescript-eslint",
   ],
   rules: {
     "no-console": ["error", { allow: ["warn", "info", "error"] }],
