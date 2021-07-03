@@ -1,19 +1,33 @@
 import React from "react";
-import { Datagrid, List, TextField } from "react-admin";
+import {
+  ArrayField,
+  Datagrid,
+  DeleteButton,
+  EditButton,
+  List,
+  SingleFieldList,
+  TextField,
+} from "react-admin";
 
 export const TouristSpotList = (props: any) => {
   return (
     <List {...props}>
       <Datagrid rowClick="edit">
         <TextField source="id" />
-        <TextField source="name" />
-        <TextField source="place.name" />
-        {/* <TextField source="username" />
-      <EmailField source="email" />
-      <TextField source="phone" />
-      <TextField source="website" />
-      <TextField source="company.name" />
-      <TextField source="company.catchPhrase" /> */}
+        <TextField source="name" label="名称" />
+        <TextField source="place.name" label="都道府県" />
+        <ArrayField source="facilities" label="施設">
+          <SingleFieldList>
+            <TextField source="name" label="施設" />
+          </SingleFieldList>
+        </ArrayField>
+        <ArrayField source="tags" label="タグ">
+          <SingleFieldList>
+            <TextField source="name" label="タグ名" />
+          </SingleFieldList>
+        </ArrayField>
+        <EditButton />
+        <DeleteButton />
       </Datagrid>
     </List>
   );
