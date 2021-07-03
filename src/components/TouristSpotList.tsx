@@ -16,6 +16,7 @@ export const TouristSpotList = (props: any) => {
         <TextField source="id" />
         <TextField source="name" label="名称" />
         <TextField source="place.name" label="都道府県" />
+        <TextField source="address" label="住所" />
         <ArrayField source="facilities" label="施設">
           <SingleFieldList>
             <TextField source="name" label="施設" />
@@ -27,7 +28,7 @@ export const TouristSpotList = (props: any) => {
           </SingleFieldList>
         </ArrayField>
         <EditButton />
-        <DeleteButton />
+        <DeleteButton undoable={false} />
       </Datagrid>
     </List>
   );

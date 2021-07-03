@@ -2,6 +2,8 @@ import React from "react";
 import {
   ArrayInput,
   Edit,
+  ImageField,
+  ImageInput,
   SimpleForm,
   SimpleFormIterator,
   TextInput,
@@ -13,6 +15,9 @@ export const TouristSpotEdit = (props: any) => {
       <SimpleForm>
         <TextInput disabled source="id" />
         <TextInput source="name" />
+        <ImageInput source="picture">
+          <ImageField source="src" title="title" />
+        </ImageInput>
         <TextInput multiline source="description" />
         <TextInput source="imageUrl" />
         <TextInput source="address" />

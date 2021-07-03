@@ -2,6 +2,8 @@ import React from "react";
 import {
   ArrayInput,
   Create,
+  ImageField,
+  ImageInput,
   SimpleForm,
   SimpleFormIterator,
   TextInput,
@@ -13,12 +15,16 @@ export const TouristSpotCreate = (props: any) => {
   const handleTop = () => {
     redirect("/tourist-spots");
   };
+
   return (
-    <Create title="Create" {...props} onSuccess={handleTop}>
+    <Create title="Create" {...props} onSuccess={handleTop} basePath="/">
       <SimpleForm>
         <TextInput source="name" />
-        <TextInput multiline source="description" />
+        <ImageInput source="picture">
+          <ImageField source="src" />
+        </ImageInput>
         <TextInput source="imageUrl" />
+        <TextInput multiline source="description" />
         <TextInput source="address" />
         <TextInput source="businessHours" />
         <TextInput source="holiday" />
