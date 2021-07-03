@@ -15,7 +15,7 @@ export const TouristSpotEdit = (props: any) => {
       <SimpleForm>
         <TextInput disabled source="id" />
         <TextInput source="name" />
-        <ImageInput source="picture">
+        <ImageInput source="pictures">
           <ImageField source="src" title="title" />
         </ImageInput>
         <TextInput multiline source="description" />
