@@ -2,26 +2,24 @@ import React from "react";
 import {
   ArrayInput,
   Edit,
-  ImageField,
-  ImageInput,
   SimpleForm,
   SimpleFormIterator,
   TextInput,
 } from "react-admin";
+
+import { PictureField } from "./common/PictureField";
 
 export const TouristSpotEdit = (props: any) => {
   return (
     <Edit title="Edit" {...props}>
       <SimpleForm>
         <TextInput disabled source="id" />
-        <TextInput source="name" />
-        <ImageInput source="pictures">
-          <ImageField source="src" title="title" />
-        </ImageInput>
+        <TextInput source="name" label="名称" />
+        <PictureField />
+        <TextInput source="imageUrl" label="画像url" />
         <TextInput multiline source="description" />
-        <TextInput source="imageUrl" />
-        <TextInput source="address" />
-        <TextInput source="businessHours" />
+        <TextInput source="address" rerecord="name" />
+        <TextInput source="businessHours" resource="name" />
         <TextInput source="holiday" />
         <TextInput source="officialUrl" />
         <TextInput source="remarks" />
