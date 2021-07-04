@@ -17,12 +17,12 @@ export const TouristSpotList = (props: any) => {
         <TextField source="name" label="名称" />
         <TextField source="place.name" label="都道府県" />
         <TextField source="address" label="住所" />
-        <ArrayField source="facilities" label="施設">
+        <ArrayField source="facilities" label="施設" sortable={false}>
           <SingleFieldList>
             <TextField source="name" label="施設" />
           </SingleFieldList>
         </ArrayField>
-        <ArrayField source="tags" label="タグ">
+        <ArrayField source="tags" label="タグ" sortable={false}>
           <SingleFieldList>
             <TextField source="name" label="タグ名" />
           </SingleFieldList>
